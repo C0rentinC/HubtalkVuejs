@@ -1,15 +1,10 @@
 <template>
-    <v-flex v-if="suppr" xs12 sm6 offset-sm3>
+    <v-flex v-if="suppr" xs12 sm6 offset-sm3 pb-2>
       <v-card>
-        <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-          aspect-ratio="2.75"
-        ></v-img>
 
         <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-            <div>{{item}}</div>
+            <h3 class="headline mb-0">{{ici}}</h3>
           </div>
         </v-card-title>
 
@@ -22,14 +17,20 @@
 
 <script>
 export default {
-  props: ['item'],
+  props: {item: {
+    type: String,
+    required: true,
+    default: "",
+  }},
   data() {
     return {
-      suppr: true
+      suppr: true,
+      ici: this.item
     }
   },
   methods: {
     rm: function() {
+      console.log(this.ici)
       this.suppr = false   
     }
   }

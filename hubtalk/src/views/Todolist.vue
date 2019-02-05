@@ -42,7 +42,7 @@
     <v-btn flat @click="add()" color="orange">ADD</v-btn>
     <v-layout wrap>
       <div v-for="item in lists" :key="item.id">
-        <Todolist :message="item"/>
+        <Todolist :item="item"/>
       </div>
     </v-layout>
   </v-container>
@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     add: function () {
-      this.dialog = true
+      this.dialog = false
       this.lists.push(this.message)
     }
   },
