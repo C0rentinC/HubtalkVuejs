@@ -7,7 +7,9 @@ import Home from "@/components/HomeComponent.vue";
 
 export default {
   data() {
-    return {};
+    return {
+      value: "bonjour"
+    };
   },
   components: {
     Home
